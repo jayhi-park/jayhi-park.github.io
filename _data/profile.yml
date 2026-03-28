@@ -1,0 +1,27 @@
+name: Juhye Park
+title: Ph.D. Student
+department: Department of Electrical and Electronic Engineering
+university: KAIST
+university_url: "https://www.kaist.ac.kr/en/"
+advisor: Prof. Hyun Myung
+advisor_url: "https://urobot.kaist.ac.kr/url_teams/prof-hyunmyung/"
+avatar_emoji: "🤖"
+avatar_image: "assets/images/profile.jpg" 
+
+bio: >
+  My research focuses on advancing Embodied AI within human-centric environments, 
+  enabling robots to intelligently execute complex tasks in diverse social settings. 
+  To achieve this, I explore various areas such as cross-view geo-localization and Vision-Language-Navigation.
+
+social:
+  email: jhpark12@kaist.ac.kr
+  github: https://github.com/jayhi-park
+  linkedin: https://www.linkedin.com/in/juhye-park-08b646337/
+
+interests:
+  - icon: "🤖"
+    label: Embodied AI
+  - icon: "🗺️"
+    label: Cross-View Geo-Localization
+  - icon: "🧠"
+    label: Vision-Language-Navigation

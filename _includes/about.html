@@ -1,0 +1,9 @@
+{% assign p = site.data.profile %}
+<section>
+  <h2 class="section-title">Research Interests</h2>
+  <div class="tags">
+    {% for item in p.interests %}
+    <span class="tag"><span>{{ item.icon }}</span> {{ item.label }}</span>
+    {% endfor %}
+  </div>
+</section>

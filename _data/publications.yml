@@ -1,0 +1,20 @@
+# Publications list
+# links 항목: project, arxiv, paper, code, video (있는 것만 추가)
+# thumbnail: assets/images/pub/파일명.jpg
+
+- title: "VIRD: View-Invariant Representation through Dual-Axis Transformation for Cross-View Pose Estimation"
+  authors: "**Juhye Park**, Wooju Lee, Dasol Hong, Changki Sung, Youngwoo Seo, Dongwan Kang, Hyun Myung"
+  venue: CVPR
+  year: 2026
+  thumbnail: "assets/images/pub/2026_VIRD/main.png"
+  links:
+    project: "/VIRD/"
+    arxiv: "https://arxiv.org/abs/2603.12918"
+
+- title: "PIDLoc: Cross-View Pose Optimization Network Inspired by PID Controllers"
+  authors: "Wooju Lee, **Juhye Park**, Dasol Hong, Changki Sung, Youngwoo Seo, Dongwan Kang, Hyun Myung"
+  venue: CVPR
+  year: 2025
+  thumbnail: "assets/images/pub/2025_PIDLoc/main.png"  
+  links:
+    arxiv: "https://arxiv.org/abs/2503.02388"

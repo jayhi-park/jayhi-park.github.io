@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>{{ page.title }} · {{ site.data.profile.name }}</title>
+  <meta name="description" content="{{ site.description }}"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/project.css' | relative_url }}">
+</head>
+<body>
+  <div class="page project-page">
+    <a href="{{ '/' | relative_url }}" class="back-link">← Back</a>
+    {{ content }}
+    <footer>
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ site.data.profile.name }} · {{ site.data.profile.university }}</p>
+    </footer>
+  </div>
+</body>
+</html>

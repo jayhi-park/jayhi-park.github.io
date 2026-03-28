@@ -1,0 +1,35 @@
+<section id="publications">
+  <h2 class="section-title">Publications</h2>
+  {% if site.data.publications.size > 0 %}
+  <div class="pub-list">
+    {% for pub in site.data.publications %}
+    <div class="pub-item">
+      <div class="pub-thumb">
+        {% if pub.thumbnail %}
+        <img src="{{ pub.thumbnail | relative_url }}" alt="{{ pub.title }}">
+        {% else %}
+        No image
+        {% endif %}
+      </div>
+      <div class="pub-body">
+        <div class="pub-title">
+          {% if pub.links.project %}<a href="{{ pub.links.project | relative_url }}">{{ pub.title }}</a>
+          {% else %}{{ pub.title }}{% endif %}
+        </div>
+        <div class="pub-authors">{{ pub.authors | markdownify }}</div>
+        <div class="pub-venue">{{ pub.venue }}{% if pub.year %}, {{ pub.year }}{% endif %}</div>
+        <div class="pub-links">
+          {% if pub.links.project %}<a href="{{ pub.links.project | relative_url }}" class="link-project">Homepage</a>{% endif %}
+          {% if pub.links.arxiv %}<a href="{{ pub.links.arxiv }}" target="_blank" rel="noopener" class="link-arxiv">arXiv</a>{% endif %}
+          {% if pub.links.paper %}<a href="{{ pub.links.paper }}" target="_blank" rel="noopener" class="link-paper">Paper</a>{% endif %}
+          {% if pub.links.code %}<a href="{{ pub.links.code }}" target="_blank" rel="noopener" class="link-code">Code</a>{% endif %}
+          {% if pub.links.video %}<a href="{{ pub.links.video }}" target="_blank" rel="noopener" class="link-video">Video</a>{% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="tbu">📄 Publications coming soon.</div>
+  {% endif %}
+</section>

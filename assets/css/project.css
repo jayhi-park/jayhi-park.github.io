@@ -1,0 +1,148 @@
+/* ── Back link ── */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-bottom: 36px;
+  transition: color .15s;
+}
+
+.back-link:hover {
+  color: var(--title-blue);
+  text-decoration: none;
+}
+
+/* ── Hero ── */
+.project-hero {
+  text-align: center;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 48px;
+}
+
+.project-teaser {
+  width: auto;
+  max-width: 200px;
+  max-height: 80px;
+  object-fit: contain;
+  border-radius: 6px;
+  margin: 0 auto 16px;
+  display: block;
+}
+
+.project-title {
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.project-venue {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--title-blue);
+  background: #eef3fb;
+  padding: 3px 12px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.project-authors {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 4px;
+}
+
+.project-affil {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.project-links {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  background: #222;
+  color: #fff;
+  border: 1.5px solid #222;
+  transition: opacity .15s;
+}
+
+.btn:hover {
+  opacity: .7;
+  text-decoration: none;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #222;
+}
+
+.btn-outline:hover {
+  background: #f0f0f0;
+  opacity: 1;
+}
+
+/* ── Sections ── */
+.project-section {
+  margin-bottom: 44px;
+}
+
+.project-section h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--title-blue);
+}
+
+.project-section p {
+  font-size: 0.88rem;
+  color: #333;
+  line-height: 1.75;
+}
+
+/* ── BibTeX ── */
+.project-section pre {
+  background: #f4f4f2;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 20px;
+  overflow-x: auto;
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .project-title {
+    font-size: 1.25rem;
+  }
+
+  .project-teaser {
+    max-height: 180px;
+  }
+}
