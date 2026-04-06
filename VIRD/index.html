@@ -1,24 +1,6 @@
 ---
 layout: project
 title: "VIRD"
-abstract: >
-Accurate global localization is critical for autonomous driving and robotics,
-but GNSS-based approaches often degrade due to occlusion and multipath effects.
-As an emerging alternative, cross-view pose estimation predicts the 3-DoF camera
-pose corresponding to a ground-view image with respect to a geo-referenced satellite image.
-However, existing methods struggle to bridge the significant viewpoint gap between the
-ground and satellite views mainly due to limited spatial correspondences. We propose
-a novel cross-view pose estimation method that constructs view-invariant representations
-through dual-axis transformation (VIRD). VIRD first applies a polar transformation to
-the satellite view to facilitate horizontal correspondence, then uses context-enhanced
-positional attention on the ground and polar-transformed satellite features to mitigate
-vertical misalignment, explicitly bridging the viewpoint gap. To further strengthen view
-invariance, we introduce a view-reconstruction loss that encourages the derived representations
-to reconstruct the original and cross-view images. Experiments on the KITTI and VIGOR datasets
-demonstrate that VIRD outperforms the state-of-the-art methods without orientation priors,
-reducing median position and orientation errors by 50.7% and 76.5% on KITTI, and 18.0% and
-46.8% on VIGOR, respectively.
-video: "https://www.youtube.com/watch?v=Bp997LLf0QY"
 ---
 
 <div class="project-hero">
@@ -50,46 +32,66 @@ video: "https://www.youtube.com/watch?v=Bp997LLf0QY"
 <section class="project-section">
   <div class="tldr">
     <span class="tldr-label">TL;DR</span>
-    <span class="tldr-text">VIRD explicitly resolves both horizontal and vertical viewpoint gaps between ground and
-      satellite views through dual-axis transformation and a view-reconstruction loss, achieving state-of-the-art
-      cross-view pose estimation without orientation priors.</span>
+    <span class="tldr-text">VIRD explicitly resolves significant viewpoint gaps between ground and satellite views
+      through <strong>dual-axis transformation</strong> and <strong>view-reconstruction loss</strong>, achieving
+      state-of-the-art cross-view pose estimation without orientation priors.</span>
   </div>
 </section>
 
 <section class="project-section">
   <h2>Abstract</h2>
-  <p>{{ page.abstract }}</p>
+  <p>Accurate global localization is critical for autonomous driving and robotics, but GNSS-based approaches often
+    degrade due to occlusion and multipath effects. As an emerging alternative, cross-view pose estimation predicts the
+    3-DoF camera pose corresponding to a ground-view image with respect to a geo-referenced satellite image. However,
+    existing methods struggle to bridge the significant viewpoint gap between the ground and satellite views mainly due
+    to limited spatial correspondences. We propose a novel cross-view pose estimation method that constructs
+    view-invariant representations through dual-axis transformation (VIRD). VIRD first applies a polar transformation to
+    the satellite view to facilitate horizontal correspondence, then uses context-enhanced positional attention on the
+    ground and polar-transformed satellite features to mitigate vertical misalignment, explicitly bridging the viewpoint
+    gap. To further strengthen view invariance, we introduce a view-reconstruction loss that encourages the derived
+    representations to reconstruct the original and cross-view images. Experiments on the KITTI and VIGOR datasets
+    demonstrate that VIRD outperforms the state-of-the-art methods without orientation priors, reducing median position
+    and orientation errors by 50.7% and 76.5% on KITTI, and 18.0% and 46.8% on VIGOR, respectively.</p>
 </section>
 
 <section class="project-section">
   <h2>Method</h2>
   <p>
-    VIRD constructs view-invariant descriptors through three components.
-    <strong>(1) Dual-axis transformation:</strong> a polar transformation aligns the satellite view horizontally to the
-    ground view,
-    followed by context-enhanced positional attention (CEPA) that resolves remaining vertical misalignment without
-    camera parameters.
-    <strong>(2) View-reconstruction loss:</strong> descriptors are trained to reconstruct both original and cross-view
-    images,
-    enforcing view-invariant representations that capture shared spatial structures.
-    <strong>(3) Matching and regression:</strong> a coarse global descriptor match is refined by a regression module
-    predicting residual pose offsets for fine-grained 3-DoF localization.
+    VIRD bridges the viewpoint gap between ground and satellite views by constructing view-invariant descriptors through three jointly optimized components.
+  </p>
+  <p>
+    <strong>(1) Dual-axis transformation.</strong>
+    The viewpoint gap manifests along both horizontal and vertical axes of the image plane.
+    For the horizontal axis, VIRD applies a polar transformation to the satellite view, mapping the azimuth direction as the horizontal axis to establish consistent cross-view correspondence.
+    The remaining vertical discrepancy is addressed by context-enhanced positional attention (CEPA), which transforms ground and polar-transformed satellite features along the vertical axis via positional attention.
+    Unlike prior geometry-based approaches, CEPA learns a view-consistent vertical transformation without camera parameters and adaptively captures vertical structures in the ground view by leveraging contextual cues.
+  </p>
+  <p>
+    <strong>(2) View-reconstruction loss.</strong>
+    To further strengthen view invariance, the descriptors are trained to reconstruct both original and cross-view images.
+    This reconstruction objective encourages the representations to focus on spatial structures shared across views, rather than view-specific appearance, without relying on explicit geometric priors.
+  </p>
+  <p>
+    <strong>(3) Matching and regression.</strong>
+    A descriptor matching module computes cosine similarity between ground and candidate satellite descriptors to estimate a coarse pose.
+    A regression module then refines this estimate by predicting residual pose offsets, yielding the final 3-DoF camera pose.
   </p>
   <figure class="project-figure project-figure-sm">
     <img src="{{ '/VIRD/assets/images/fig1.png' | relative_url }}" alt="VIRD motivation">
-    <figcaption>Ground- and satellite-view images exhibit a large viewpoint gap. Previous geometry-based methods
-      partially mitigate horizontal misalignment but fail to resolve vertical misalignment. VIRD overcomes both through
-      dual-axis transformation.</figcaption>
+    <figcaption>Ground- and satellite-view images exhibit a large viewpoint gap along both horizontal and vertical axes. Previous geometry-based methods only partially resolve the horizontal discrepancy and struggle with vertical structures. VIRD overcomes both through dual-axis transformation.</figcaption>
   </figure>
   <figure class="project-figure">
     <img src="{{ '/VIRD/assets/images/fig2.png' | relative_url }}" alt="VIRD pipeline">
-    <figcaption>Overview of VIRD. The framework consists of (1) dual-axis descriptor construction, (2)
-      view-reconstruction loss, and (3) matching &amp; regression for final 3-DoF pose estimation.</figcaption>
+    <figcaption>Overview of VIRD. The framework consists of (1) dual-axis descriptor construction with vertical directional encoding, (2) view-reconstruction loss, and (3) matching and regression for final 3-DoF pose estimation.</figcaption>
   </figure>
 </section>
 
 <section class="project-section">
   <h2>Results</h2>
+  <figure class="project-figure" style="margin-bottom: 28px;">
+    <img src="{{ '/VIRD/assets/images/fig5.png' | relative_url }}" alt="VIRD qualitative results">
+    <figcaption>Qualitative results of VIRD. CEPA attention weights (second column) consistently highlight regions corresponding to vertical structures such as building rooftops and road surfaces. The view-reconstruction outputs (third and fourth columns) show that the learned descriptors successfully capture cross-view consistent layouts. The final column shows pose estimation results overlaid on the satellite view.</figcaption>
+  </figure>
   <div class="result-stats">
     <div class="result-block">
       <div class="result-dataset">KITTI</div>
