@@ -167,6 +167,12 @@
   font-weight: 400;
 }
 
+.hl {
+  background: linear-gradient(transparent 40%, #b8d4f8 40%);
+  font-weight: 500;
+  padding: 0 1px;
+}
+
 /* ── Figure ── */
 .project-figure {
   margin: 28px 0 0;
