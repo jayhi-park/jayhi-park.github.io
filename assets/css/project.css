@@ -140,26 +140,28 @@
 .tldr {
   display: flex;
   align-items: baseline;
-  gap: 12px;
+  gap: 14px;
   background: #eef3fb;
-  border-left: 3px solid var(--title-blue);
+  border-left: 4px solid var(--title-blue);
   border-radius: 0 6px 6px 0;
-  padding: 14px 18px;
+  padding: 16px 20px;
 }
 
 .tldr-label {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--title-blue);
   flex-shrink: 0;
+  padding-top: 2px;
 }
 
 .tldr-text {
-  font-size: 0.88rem;
-  color: #333;
-  line-height: 1.7;
+  font-size: 0.92rem;
+  color: #1a1a1a;
+  line-height: 1.75;
+  font-weight: 400;
 }
 
 /* ── Figure ── */
@@ -179,6 +181,12 @@
   color: var(--muted);
   margin-top: 8px;
   line-height: 1.6;
+}
+
+.project-figure-sm {
+  max-width: 65%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ── Result stats ── */
