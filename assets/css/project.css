@@ -136,6 +136,32 @@
   line-height: 1.65;
 }
 
+/* ── TL;DR ── */
+.tldr {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  background: #eef3fb;
+  border-left: 3px solid var(--title-blue);
+  border-radius: 0 6px 6px 0;
+  padding: 14px 18px;
+}
+
+.tldr-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--title-blue);
+  flex-shrink: 0;
+}
+
+.tldr-text {
+  font-size: 0.88rem;
+  color: #333;
+  line-height: 1.7;
+}
+
 /* ── Figure ── */
 .project-figure {
   margin: 28px 0 0;
