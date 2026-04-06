@@ -35,7 +35,7 @@ title: "VIRD"
   <div class="tldr">
     <span class="tldr-label">TL;DR</span>
     <span class="tldr-text">VIRD explicitly resolves significant viewpoint gaps between ground and satellite views
-      through <span class="hl">a dual-axis transformation</span> and <span class="hl">a view-reconstruction loss</span>,
+      through <strong>a dual-axis transformation</strong> and <strong>a view-reconstruction loss</strong>,
       achieving state-of-the-art cross-view pose estimation without orientation priors.</span>
   </div>
   <figure class="project-figure" style="margin-top: 24px;">
@@ -70,7 +70,7 @@ title: "VIRD"
     three jointly optimized components.
   </p>
   <p>
-    <span class="hl"><strong>(1) Dual-axis transformation.</strong></span>
+    <strong>(1) Dual-axis transformation.</strong>
     The viewpoint gap occurs along both horizontal and vertical axes of the image plane.
     For the horizontal axis, VIRD applies a polar transformation to the satellite view, mapping the azimuth direction as
     the horizontal axis to establish consistent cross-view correspondence.
@@ -80,14 +80,14 @@ title: "VIRD"
     parameters and adaptively captures vertical structures in the ground view by leveraging contextual cues.
   </p>
   <p>
-    <span class="hl"><strong>(2) View-reconstruction loss.</strong></span>
+    <strong>(2) View-reconstruction loss.</strong>
     To further strengthen view invariance, the descriptors are trained to reconstruct both original and cross-view
     images.
     This reconstruction loss encourages the representations to focus on spatial structures shared across views,
     rather than view-specific appearance.
   </p>
   <p>
-    <span class="hl"><strong>(3) Matching and regression.</strong></span>
+    <strong>(3) Matching and regression.</strong>
     A matching module computes cosine similarity between ground and candidate satellite descriptors to
     estimate a coarse pose.
     A regression module then refines this estimate by predicting residual pose offsets, yielding the final 3-DoF camera

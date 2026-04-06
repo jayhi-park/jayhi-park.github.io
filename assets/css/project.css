@@ -168,9 +168,11 @@
 }
 
 .hl {
-  background: linear-gradient(transparent 35%, #b8d4f8 35%);
-  font-weight: 500;
-  padding: 0 1px;
+  background-color: #b8d4f8;
+  border-radius: 4px;
+  padding: 2px 4px;
+  display: inline-block;
+  line-height: 1;
 }
 
 /* ── Figure ── */
