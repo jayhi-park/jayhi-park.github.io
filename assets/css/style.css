@@ -1,4 +1,10 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 :root {
   --bg: #ffffff;
@@ -17,8 +23,14 @@ body {
   line-height: 1.6;
 }
 
-a { color: var(--title-blue); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a {
+  color: var(--title-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
 /* ── Nav ── */
 .site-nav {
@@ -52,7 +64,10 @@ a:hover { text-decoration: underline; }
   color: var(--muted);
 }
 
-.site-nav .nav-links a:hover { color: var(--title-blue); text-decoration: none; }
+.site-nav .nav-links a:hover {
+  color: var(--title-blue);
+  text-decoration: none;
+}
 
 /* ── Layout ── */
 .page {
@@ -136,7 +151,10 @@ a:hover { text-decoration: underline; }
   transition: background .15s;
 }
 
-.social-links a:hover { background: #ddd; text-decoration: none; }
+.social-links a:hover {
+  background: #ddd;
+  text-decoration: none;
+}
 
 .social-links a svg {
   width: 13px;
@@ -150,7 +168,9 @@ a:hover { text-decoration: underline; }
 }
 
 /* ── Sections ── */
-section { margin-bottom: 52px; }
+section {
+  margin-bottom: 52px;
+}
 
 .section-title {
   font-size: 1.05rem;
@@ -193,7 +213,9 @@ section { margin-bottom: 52px; }
   border-bottom: 1px solid var(--border);
 }
 
-.pub-item:first-child { border-top: 1px solid var(--border); }
+.pub-item:first-child {
+  border-top: 1px solid var(--border);
+}
 
 .pub-thumb {
   width: 160px;
@@ -216,7 +238,10 @@ section { margin-bottom: 52px; }
   object-fit: cover;
 }
 
-.pub-body { flex: 1; min-width: 0; }
+.pub-body {
+  flex: 1;
+  min-width: 0;
+}
 
 .pub-title {
   font-size: 0.92rem;
@@ -239,6 +264,15 @@ section { margin-bottom: 52px; }
   margin-bottom: 10px;
 }
 
+.pub-highlight {
+  display: inline;
+  margin-left: 4px;
+  font-size: 0.82rem;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--muted);
+}
+
 /* ── Publication link badges ── */
 .pub-links {
   display: flex;
@@ -255,13 +289,35 @@ section { margin-bottom: 52px; }
   transition: opacity .15s;
 }
 
-.pub-links a:hover { opacity: .75; text-decoration: none; }
+.pub-links a:hover {
+  opacity: .75;
+  text-decoration: none;
+}
 
-.pub-links .link-project  { background: #eef3fb; color: var(--title-blue); }
-.pub-links .link-arxiv    { background: #f5f0ff; color: #5a3ea1; }
-.pub-links .link-paper    { background: #e8e8e8; color: #333; }
-.pub-links .link-code     { background: #e8e8e8; color: #333; }
-.pub-links .link-video    { background: #e8e8e8; color: #333; }
+.pub-links .link-project {
+  background: #eef3fb;
+  color: var(--title-blue);
+}
+
+.pub-links .link-arxiv {
+  background: #f5f0ff;
+  color: #5a3ea1;
+}
+
+.pub-links .link-paper {
+  background: #e8e8e8;
+  color: #333;
+}
+
+.pub-links .link-code {
+  background: #e8e8e8;
+  color: #333;
+}
+
+.pub-links .link-video {
+  background: #e8e8e8;
+  color: #333;
+}
 
 
 /* ── Projects ── */
@@ -278,7 +334,9 @@ section { margin-bottom: 52px; }
   border-bottom: 1px solid var(--border);
 }
 
-.project-item:first-child { border-top: 1px solid var(--border); }
+.project-item:first-child {
+  border-top: 1px solid var(--border);
+}
 
 .project-thumb {
   width: 160px;
@@ -294,9 +352,15 @@ section { margin-bottom: 52px; }
   font-size: 0.75rem;
 }
 
-.project-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-.project-body { flex: 1; }
+.project-body {
+  flex: 1;
+}
 
 .project-title {
   font-size: 0.92rem;
@@ -341,10 +405,20 @@ section { margin-bottom: 52px; }
   text-decoration: none;
 }
 
-.project-links .link-project { background: #eef3fb; color: var(--title-blue); }
-.project-links .link-arxiv   { background: #f5f0ff; color: #5a3ea1; }
+.project-links .link-project {
+  background: #eef3fb;
+  color: var(--title-blue);
+}
 
-.project-links a:hover { opacity: .75; text-decoration: none; }
+.project-links .link-arxiv {
+  background: #f5f0ff;
+  color: #5a3ea1;
+}
+
+.project-links a:hover {
+  opacity: .75;
+  text-decoration: none;
+}
 
 /* ── TBU placeholder ── */
 .tbu {
@@ -370,10 +444,32 @@ footer {
 
 /* ── Responsive ── */
 @media (max-width: 600px) {
-  .page { padding: 32px 18px 80px; }
-  .hero { flex-direction: column; gap: 20px; }
-  .avatar { width: 100px; height: 120px; }
-  .pub-item, .project-item { flex-direction: column; }
-  .pub-thumb, .project-thumb { width: 100%; height: 140px; }
-  .site-nav { padding: 0 18px; }
+  .page {
+    padding: 32px 18px 80px;
+  }
+
+  .hero {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 120px;
+  }
+
+  .pub-item,
+  .project-item {
+    flex-direction: column;
+  }
+
+  .pub-thumb,
+  .project-thumb {
+    width: 100%;
+    height: 140px;
+  }
+
+  .site-nav {
+    padding: 0 18px;
+  }
 }

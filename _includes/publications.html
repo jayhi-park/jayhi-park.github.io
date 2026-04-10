@@ -17,7 +17,10 @@
           {% else %}{{ pub.title }}{% endif %}
         </div>
         <div class="pub-authors">{{ pub.authors | markdownify }}</div>
-        <div class="pub-venue">{{ pub.venue }}{% if pub.year %}, {{ pub.year }}{% endif %}</div>
+        <div class="pub-venue">
+          {{ pub.venue }}{% if pub.year %}, {{ pub.year }}{% endif %}
+          {% if pub.session %}<span class="pub-highlight">{{ pub.session | markdownify | remove: "<p>" | remove: "</p>" | strip }}</span>{% endif %}
+        </div>
         <div class="pub-links">
           {% if pub.links.project %}<a href="{{ pub.links.project | relative_url }}" class="link-project">Homepage</a>{% endif %}
           {% if pub.links.arxiv %}<a href="{{ pub.links.arxiv }}" target="_blank" rel="noopener" class="link-arxiv">arXiv</a>{% endif %}

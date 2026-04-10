@@ -6,6 +6,7 @@
   authors: "**Juhye Park**, Wooju Lee, Dasol Hong, Changki Sung, Youngwoo Seo, Dongwan Kang, Hyun Myung"
   venue: CVPR
   year: 2026
+  session: "(Highlight)"
   thumbnail: "assets/images/pub/2026_VIRD/main.png"
   links:
     project: "/VIRD/"
@@ -15,6 +16,7 @@
   authors: "Wooju Lee, **Juhye Park**, Dasol Hong, Changki Sung, Youngwoo Seo, Dongwan Kang, Hyun Myung"
   venue: CVPR
   year: 2025
+  session: "(Poster)"
   thumbnail: "assets/images/pub/2025_PIDLoc/main.png"  
   links:
     arxiv: "https://arxiv.org/abs/2503.02388"
